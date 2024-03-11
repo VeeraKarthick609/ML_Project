@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 
 from sklearn.model_selection import train_test_split
+from src.components.model_trainer import ModelTrainer
 
 from src.exception import CustomException
 from src.logger import logging
@@ -69,4 +70,7 @@ if __name__ == "__main__":
     train_data_path, test_data_path = obj.initiate_data_ingestion()
 
     data_transformation_obj = DataTransformation()
-    data_transformation_obj.initiate_data_transformation(train_path=train_data_path, test_path=test_data_path)
+    train_arr,test_arr,_ = data_transformation_obj.initiate_data_transformation(train_path=train_data_path, test_path=test_data_path)
+
+    model_trainer_obj = ModelTrainer()
+    print(model_trainer_obj.initiate_model_trainer(train_array=train_arr, test_array=test_arr))
