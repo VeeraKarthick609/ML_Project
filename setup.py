@@ -32,7 +32,7 @@ def get_requirements() -> List[str]:
 
 
 setup(
-    name="mlproject",
+    name="student performance prediction",
     version="0.0.1",
     author="Veera",
     author_email="veerakarthick609@gmail.com",
